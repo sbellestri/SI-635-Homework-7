@@ -6,7 +6,7 @@
  * Time: 8:34 PM
  */
 
-/* This module creates a new permission called 'Administer appearance' that prevents users from getting to admin/apearance
+/* This module creates a new permission called 'Administer appearance' that prevents users from getting to admin/appearance
 unless they have that permission. It also renames the title of the page to 'Sam's Site Appearance'
 */
 
