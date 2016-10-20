@@ -1,0 +1,4 @@
+name=hw7a
+core=7.x
+package=Homework7
+description=hook_menu_alter for creating new permission called "admin blah"

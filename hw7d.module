@@ -1,0 +1,24 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: sbellestri
+ * Date: 10/19/16
+ * Time: 8:34 PM
+ */
+
+/*
+ * This module, hw7d, is a hook_form_alter to change the form on the admin/config/regional/settings
+ * page. It disables setting the default country and first day of the week and hides the checkbox
+ * for enabling the use of ISO weeks.
+ */
+
+function hw7d_form_alter(&$form, &$form_state, $form_id) {
+    if($form_id == 'system_regional_settings') {
+        //disable default country so it is locked on United States
+        $form['locale']['site_default_country']['#disabled'] = TRUE;
+        //disable default first day of week so it is locked on Sunday
+        $form['locale']['date_first_day']['#disabled'] = TRUE;
+        //hide checkbox for enabling use of ISO weeks
+        $form['locale']['date_api_use_iso8601']['#access'] = FALSE;
+    }
+}

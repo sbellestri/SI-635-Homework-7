@@ -1,0 +1,4 @@
+name=hw7e
+core=7.x
+package=Homework7
+description=hook_form_alter to change the form on the user/###/edit form page

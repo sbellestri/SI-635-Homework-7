@@ -1,0 +1,21 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: sbellestri
+ * Date: 10/19/16
+ * Time: 8:34 PM
+ */
+
+/* This module changes the title and page callback of the Michigan module that I made in homework 3.
+*/
+
+function hw7c_menu_alter(&$items) {
+    //change the title of the module
+    $items['michigan']['title'] = 'Michigan State Information';
+    //change the page callback of the module
+    $items['michigan']['page callback'] = 'hw7c_newcallback';
+}
+
+function hw7c_newcallback() {
+    return t('This hook menu has been altered via hw7c_menu_alter.') . hw3a_michigan();
+}

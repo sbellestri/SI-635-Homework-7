@@ -1,0 +1,4 @@
+name=hw7c
+core=7.x
+package=Homework7
+description=hook_menu_alter that changes the title and page callback of the Michigan module that I made in homework 3.

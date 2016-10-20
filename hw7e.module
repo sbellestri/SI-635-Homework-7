@@ -1,0 +1,26 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: sbellestri
+ * Date: 10/19/16
+ * Time: 8:34 PM
+ */
+
+/*
+ * This module, hw7e, is a hook_form_alter to change the form on the user/###/edit form page.
+ * It disables the ability for a user to change their username and updates the field's description accordingly.
+ * It also requires that a user enter their password when changing their user profile and updates the field's description accordingly.
+ */
+
+function hw7e_form_alter(&$form, &$form_state, $form_id) {
+    if($form_id == 'user_profile_form') {
+        //disable username field so it is locked
+        $form['account']['name']['#disabled'] = TRUE;
+        //change description for the username field
+        $form['account']['name']['#description'] = t('Please contact the head site administrator regarding a username change.');
+        //require a user to enter their password on any user profile change
+        $form['account']['current_pass']['#required'] = TRUE;
+        //update the password field description accordingly
+        $form['account']['current_pass']['#description'] = t('Enter your current password to change your user profile.');
+    }
+}

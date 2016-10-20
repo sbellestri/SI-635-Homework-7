@@ -1,0 +1,27 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: sbellestri
+ * Date: 10/19/16
+ * Time: 8:34 PM
+ */
+
+/* This module creates a new permission called 'Administer appearance' that prevents users from getting to admin/apearance
+unless they have that permission. It also renames the title of the page to 'Sam's Site Appearance'
+*/
+
+function hw7b_menu_alter(&$items) {
+    $items['admin/appearance']['title'] = 'Sam\'s Site Appearance';
+    //Users that have 'admin appearance' permission can access admin/appearance
+    $items['admin/appearance']['access arguments'] = array('Administer appearance');
+}
+
+function hw7b_permission() {
+    return array(
+        //New permission 'admin appearance'
+        'Administer appearance' => array(
+            'title' => t('Administer appearance'),
+            'description' => t('Permission for accessing admin/appearance'),
+        ),
+    );
+}

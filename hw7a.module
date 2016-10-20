@@ -1,0 +1,26 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: sbellestri
+ * Date: 10/19/16
+ * Time: 8:07 PM
+ */
+
+/* This module creates a new permission called 'admin blah' that prevents users from getting to admin/config
+unless they have that permission.
+*/
+
+function hw7a_menu_alter(&$items) {
+    //Users that have 'admin blah' permission can access admin/config
+    $items['admin/config']['access arguments'] = array('admin blah');
+}
+
+function hw7a_permission() {
+    return array(
+        //New permission 'admin blah'
+        'admin blah' => array(
+            'title' => t('admin blah'),
+            'description' => t('Permission for accessing admin/config'),
+        ),
+    );
+}
